@@ -15,6 +15,10 @@ public class LiveCounterUI : MonoBehaviour
         mainManager = FindAnyObjectByType<MainManager>();
         liveString = mainManager.livesRemaining.ToString();
         text.text = liveString;
+
+        if (mainManager.livesRemaining < 0){
+            mainManager.GameOver();
+        }
     }
 
     // Update is called once per frame

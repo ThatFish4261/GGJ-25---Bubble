@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.75f);
         mainManager.LoseLife();
         
-        if (mainManager.livesRemaining <= 0){
+        if (mainManager.livesRemaining < 0){
             mainManager.GameOver();
         }
 

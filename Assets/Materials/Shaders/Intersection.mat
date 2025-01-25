@@ -67,7 +67,7 @@ Material:
     - _CastShadows: 1
     - _Cull: 0
     - _DstBlend: 10
-    - _IntercestionDepth: 1.73
+    - _IntercestionDepth: 1.5
     - _IntersectionNoiseScale: 0
     - _IntersectionNoiseStrenght: 0
     - _QueueControl: 0
@@ -81,6 +81,6 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
-    - _IntersectionColor: {r: 0.28978273, g: 0.75059915, b: 0.8301887, a: 1}
-    - _IntersectionNoiseSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _IntersectionColor: {r: 0.57956547, g: 1.5011983, b: 1.6603774, a: 1}
+    - _IntersectionNoiseSpeed: {r: 0, g: 0.87, b: 0, a: 0}
   m_BuildTextureStacks: []

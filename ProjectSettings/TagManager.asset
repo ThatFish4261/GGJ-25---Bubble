@@ -8,6 +8,7 @@ TagManager:
   - SocialBubble
   - FinishLine
   - Ice
+  - RemoveOnFinish
   layers:
   - Default
   - TransparentFX

@@ -18,9 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level3 - IceRink.unity
     guid: 2ab09e38093dd3946b525987f71df663
   - enabled: 1
-    path: Assets/Scenes/Start & End/GameOver.unity
-    guid: 7fca583a6ed87ca478fd53c05827eb9b
-  - enabled: 1
     path: Assets/Scenes/Start & End/GameWin.unity
     guid: 75939a128e046c443a956084c50e01d7
+  - enabled: 1
+    path: Assets/Scenes/Start & End/GameOver.unity
+    guid: 7fca583a6ed87ca478fd53c05827eb9b
   m_configObjects: {}

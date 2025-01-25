@@ -11,6 +11,12 @@ public class Movement : MonoBehaviour
 
     [SerializeField] Transform playerModel;
 
+    MainManager mainManager;
+
+    void Start(){
+        mainManager = FindAnyObjectByType<MainManager>();
+    }
+
     void Update() {
 
         Vector3 horizontalVelocity = (Vector3.right * horizontalInput.x + Vector3.forward * horizontalInput.y) * speed;
@@ -20,6 +26,10 @@ public class Movement : MonoBehaviour
         if (horizontalVelocity.magnitude > 0.1f) {
             Quaternion targetRotation = Quaternion.LookRotation(horizontalVelocity);
             playerModel.rotation = Quaternion.Slerp(playerModel.rotation, targetRotation, Time.deltaTime * 10f);
+        }
+
+        if (mainManager.livesRemaining < 0){
+            mainManager.GameOver();
         }
     }
 
