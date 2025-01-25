@@ -19,10 +19,6 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        if (livesRemaining <= 0){
-            GameOver();
-        }
     }
 
     public void LoseLife(){
@@ -30,6 +26,6 @@ public class MainManager : MonoBehaviour
     }
 
     public void GameOver(){
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("GameOver - Lost");
     }
 }

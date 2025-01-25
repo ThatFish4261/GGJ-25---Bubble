@@ -66279,6 +66279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleController: {fileID: 1619337379}
+  mainManager: {fileID: 0}
 --- !u!4 &1773148471
 Transform:
   m_ObjectHideFlags: 0

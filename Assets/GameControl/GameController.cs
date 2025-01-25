@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField] BubbleController bubbleController;
+    [SerializeField] MainManager mainManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        mainManager = FindAnyObjectByType<MainManager>();
     }
 
     // Update is called once per frame
@@ -34,11 +35,17 @@ public class GameController : MonoBehaviour
 
     IEnumerator LevelRestart(){
         yield return new WaitForSecondsRealtime(0.75f);
+        mainManager.LoseLife();
+        
+        if (mainManager.livesRemaining <= 0){
+            mainManager.GameOver();
+        }
+
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
 
     public IEnumerator NextLevel(){
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(0.75f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
