@@ -13,17 +13,23 @@ public class Movement : MonoBehaviour
 
     MainManager mainManager;
 
+    [SerializeField] Animator animator;
+
     void Start(){
         mainManager = FindAnyObjectByType<MainManager>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update() {
 
         Vector3 horizontalVelocity = (Vector3.right * horizontalInput.x + Vector3.forward * horizontalInput.y) * speed;
         
+        animator.speed = 0f;
+
         controller.Move(horizontalVelocity * Time.deltaTime);
 
         if (horizontalVelocity.magnitude > 0.1f) {
+            animator.speed = 2f;
             Quaternion targetRotation = Quaternion.LookRotation(horizontalVelocity);
             playerModel.rotation = Quaternion.Slerp(playerModel.rotation, targetRotation, Time.deltaTime * 10f);
         }
