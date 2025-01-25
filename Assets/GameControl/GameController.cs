@@ -28,7 +28,17 @@ public class GameController : MonoBehaviour
         }
 
         if (bubbleController.socialLevel <= 0f){
-            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+            StartCoroutine(LevelRestart());
         }
+    }
+
+    IEnumerator LevelRestart(){
+        yield return new WaitForSecondsRealtime(0.75f);
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+    }
+
+    public IEnumerator NextLevel(){
+        yield return new WaitForSecondsRealtime(0.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

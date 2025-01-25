@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PathFollower : MonoBehaviour
@@ -9,33 +7,51 @@ public class PathFollower : MonoBehaviour
     public float speed = 2.5f;
     public float reachDist = 1.0f;
     public int currentPoint = 0;
+    private bool isWaiting = false;
 
-
-    void Start(){
-
+    void Start()
+    {
     }
 
-    void Update(){
-        //Vector3 dir = path [currentPoint].position - transform.position;
-        
-        float dist = Vector3.Distance (path [currentPoint].position, transform.position);
-        
-        transform.position = Vector3.MoveTowards (transform.position,path [currentPoint].position,Time.deltaTime*speed);
+    void Update()
+    {
+        if (!isWaiting)
+        {
+            float dist = Vector3.Distance(path[currentPoint].position, transform.position);
+            transform.position = Vector3.MoveTowards(transform.position, path[currentPoint].position, Time.deltaTime * speed);
 
-        if (dist <= reachDist){
-            currentPoint++;
-        }
-
-        if(currentPoint >= path.Length){
-            currentPoint = 0;
+            if (dist <= reachDist)
+            {
+                StartCoroutine(WaitAtPoint());
+            }
         }
     }
 
-    void OnDrawGizmos(){
-        if(path.Length > 0)
-        for (int i = 0; i < path.Length; i++){
-            if(path[i] != null){
-                Gizmos.DrawSphere(path[i].position,reachDist);
+    IEnumerator WaitAtPoint()
+    {
+        isWaiting = true;
+        yield return new WaitForSeconds(1.5f);
+
+        currentPoint++;
+        
+        if (currentPoint >= path.Length)
+        {
+            currentPoint = 0; 
+        }
+
+        isWaiting = false;
+    }
+
+    void OnDrawGizmos()
+    {
+        if (path.Length > 0)
+        {
+            for (int i = 0; i < path.Length; i++)
+            {
+                if (path[i] != null)
+                {
+                    Gizmos.DrawSphere(path[i].position, reachDist);
+                }
             }
         }
     }
