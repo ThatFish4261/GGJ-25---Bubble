@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start & End/MainMenu.unity
+    guid: 10e750ff3a2006b4587d3b5852ccf23d
+  - enabled: 1
     path: Assets/Scenes/Levels/Level1 - Train.unity
     guid: 9d4313842d5a6a047933bfee485bdad2
   - enabled: 1
@@ -15,9 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level3 - IceRink.unity
     guid: 2ab09e38093dd3946b525987f71df663
   - enabled: 1
-    path: Assets/Scenes/Start & End/GameOver - Lost.unity
-    guid: 208ede2030751bb45b7144cfd3c3a3d6
+    path: Assets/Scenes/Start & End/GameOver.unity
+    guid: 7fca583a6ed87ca478fd53c05827eb9b
   - enabled: 1
-    path: Assets/Scenes/Testing/TestScene.unity
-    guid: 7746e3e91a684504ca44204ae35f3491
+    path: Assets/Scenes/Start & End/GameWin.unity
+    guid: 75939a128e046c443a956084c50e01d7
   m_configObjects: {}

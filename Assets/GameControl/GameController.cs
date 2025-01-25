@@ -19,13 +19,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
-            #if UNITY_STANDALONE
-                    Application.Quit();
-            #endif
 
-            #if UNITY_EDITOR
-                    UnityEditor.EditorApplication.isPlaying = false;
-            #endif
         }
 
         if (bubbleController.socialLevel <= 0f){

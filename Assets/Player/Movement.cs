@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     [SerializeField] Transform playerModel;
 
     void Update() {
+
         Vector3 horizontalVelocity = (Vector3.right * horizontalInput.x + Vector3.forward * horizontalInput.y) * speed;
         
         controller.Move(horizontalVelocity * Time.deltaTime);

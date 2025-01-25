@@ -7,6 +7,7 @@ TagManager:
   - PlayerTest
   - SocialBubble
   - FinishLine
+  - Ice
   layers:
   - Default
   - TransparentFX
