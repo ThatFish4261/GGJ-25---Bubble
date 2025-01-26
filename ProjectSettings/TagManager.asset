@@ -9,6 +9,8 @@ TagManager:
   - FinishLine
   - Ice
   - RemoveOnFinish
+  - AboutPage
+  - HomePage
   layers:
   - Default
   - TransparentFX
