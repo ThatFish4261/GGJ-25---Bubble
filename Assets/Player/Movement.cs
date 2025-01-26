@@ -15,9 +15,12 @@ public class Movement : MonoBehaviour
 
     [SerializeField] Animator animator;
 
+    [SerializeField] AudioClip footstepSound;
+
     void Start(){
         mainManager = FindAnyObjectByType<MainManager>();
         animator = GetComponentInChildren<Animator>();
+        AudioSource audio = GetComponent<AudioSource>();
     }
 
     void Update() {
